@@ -41,14 +41,15 @@ const ProductCard = ({ product }) => {
                     />
                 )}
             </div>
-            <section className="w-full p-4">
+            <section className="w-full p-6">
                 <h3
-                    className="font-bold"
+                    className="font-semibold text-gray-600"
                     style={{
                         fontSize: "14px",
+                        marginBottom: "12px",
                         fontFamily: "DM Sans Variable, sans-serif",
                         cursor: "pointer",
-                        marginLeft: "43px",
+                        // marginLeft: "37px",
                     }}
                     onMouseEnter={e => (e.currentTarget.style.textDecoration = "underline")}
                     onMouseLeave={e => (e.currentTarget.style.textDecoration = "none")}
