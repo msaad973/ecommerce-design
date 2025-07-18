@@ -10,8 +10,7 @@ const getBadge = (id) => {
 const ProductCard = ({ product }) => {
     const badge = getBadge(product.id);
     const originalPrice = Math.round(product.price * 1.2);
-    
-    // Limit colors to first 3 and calculate remaining count
+
     const maxDisplayColors = 3;
     const displayColors = product.colors?.slice(0, maxDisplayColors) || [];
     const remainingColors = product.colors?.length > maxDisplayColors ? product.colors.length - maxDisplayColors : 0;
@@ -35,7 +34,8 @@ const ProductCard = ({ product }) => {
                             right: 8,
                             fontWeight: "bold",
                             zIndex: 2,
-                            backgroundColor: badge === "NEW" ? "#CAFDFE" : "#FFE9D5",
+                            borderRadius: "6px",
+                            backgroundColor: badge === "NEW" ? "#CAFDF5" : "#FFE9D5",
                             color: badge === "NEW" ? "#003768" : "#7A0916"
                         }}
                     />
@@ -66,7 +66,7 @@ const ProductCard = ({ product }) => {
                                         color: color,
                                         fontSize: 20,
                                         position: "absolute",
-                                        right: `${index * 9}px`, 
+                                        right: `${index * 9}px`,
                                         zIndex: displayColors.length - index,
                                     }}
                                 />
