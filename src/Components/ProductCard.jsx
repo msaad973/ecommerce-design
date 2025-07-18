@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
     const remainingColors = product.colors?.length > maxDisplayColors ? product.colors.length - maxDisplayColors : 0;
 
     return (
-        <div className="flex flex-col items-center relative">
+        <div className="flex flex-col items-center relative" style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", borderRadius: "15px", width: "100%" }}>
             <div style={{ position: "relative", width: "100%" }}>
                 <img
                     src={product.image}
