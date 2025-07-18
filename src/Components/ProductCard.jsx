@@ -49,7 +49,6 @@ const ProductCard = ({ product }) => {
                         marginBottom: "12px",
                         fontFamily: "DM Sans Variable, sans-serif",
                         cursor: "pointer",
-                        // marginLeft: "37px",
                     }}
                     onMouseEnter={e => (e.currentTarget.style.textDecoration = "underline")}
                     onMouseLeave={e => (e.currentTarget.style.textDecoration = "none")}
