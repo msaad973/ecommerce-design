@@ -7,6 +7,8 @@ const getBadge = (id) => {
     return badges[id % badges.length];
 };
 
+
+
 const ProductCard = ({ product }) => {
     const badge = getBadge(product.id);
     const originalPrice = Math.round(product.price * 1.2);
