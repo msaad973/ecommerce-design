@@ -27,7 +27,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-white p-2 text-black flex justify-between items-center shadow h-16 fixed top-0 left-0 w-full z-50">
+        <nav className="bg-white p-2 text-black flex justify-between items-center h-16 fixed top-0 left-0 w-full z-50">
             <h1 className="text-xl font-bold ml-4">E-Commerce Site</h1>
             <div className="flex items-center gap-2 mr-4">
                 {!showSearch && (
