@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, Collapse, Divider, Box } from '@mui/material';
+import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, Popover, Box } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
 import PersonIcon from '@mui/icons-material/Person';
 import DashboardCustomizeIcon from '@mui/icons-material/InsertChartOutlinedSharp';
 import ArticleIcon from '@mui/icons-material/Article';
 import NotInterestedIcon from '@mui/icons-material/NotInterested';
-import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Sidebar = () => {
-    const [openTeamMenu, setOpenTeamMenu] = useState(false);
-    // Set Dashboard as the default selected item
+    const [anchorEl, setAnchorEl] = useState(null);
     const [activeItem, setActiveItem] = useState('Dashboard');
     const [selectedTeam, setSelectedTeam] = useState('Team 1');
 
@@ -32,23 +30,30 @@ const Sidebar = () => {
         { id: 'Team3', label: 'Team 3', icon: WorkspacePremiumIcon, type: 'pro' },
     ];
 
-    const handleClick = (item) => {
-        if (item === 'TeamMenu') {
-            setOpenTeamMenu(!openTeamMenu);
-            // Don't change activeItem when clicking team menu toggle
-        } else if (item.startsWith('Team')) {
-            const team = teamItems.find(t => t.id === item);
-            if (team) {
-                setSelectedTeam(team.label);
-            }
-            setActiveItem(item);
-        } else {
-            // For regular nav items
-            setActiveItem(item);
-        }
+    const handleTeamClick = (event) => {
+        setAnchorEl(event.currentTarget);
     };
 
-    const getHoverStyles = (isSelected, teamMenu) => ({
+    const handlePopoverClose = () => {
+        setAnchorEl(null);
+    };
+
+    const handleTeamSelect = (teamId) => {
+        const team = teamItems.find(t => t.id === teamId);
+        if (team) {
+            setSelectedTeam(team.label);
+            setActiveItem(teamId);
+        }
+        handlePopoverClose();
+    };
+
+    const handleNavClick = (item) => {
+        setActiveItem(item);
+    };
+
+    const open = Boolean(anchorEl);
+
+    const getHoverStyles = (isSelected) => ({
         '&:hover': {
             backgroundColor: '#e3f2fd',
             borderRadius: '8px',
@@ -75,10 +80,26 @@ const Sidebar = () => {
         margin: '2px 8px',
         gap: '8px',
         padding: '8px',
-        ...(teamMenu && {
-            boxShadow: `rgba(149, 157, 165, 0.2) 0px 8px 24px`,
-            backgroundColor: 'palate-grey 1px',
-        })
+    });
+
+    const getTeamSelectorStyles = () => ({
+        '&:hover': {
+            backgroundColor: '#e3f2fd',
+            borderRadius: '8px',
+            margin: '2px 8px',
+            '& .MuiListItemIcon-root': {
+                color: '#1976d2',
+            },
+            '& .MuiListItemText-primary': {
+                color: '#1976d2',
+            },
+        },
+        borderRadius: '8px',
+        margin: '2px 8px',
+        gap: '8px',
+        padding: '8px',
+        boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+        backgroundColor: '#f8f9fa',
     });
 
     const renderLabel = (type) => (
@@ -178,10 +199,10 @@ const Sidebar = () => {
             <LogoSvg />
 
             <List sx={{ pt: 0 }}>
+                {/* Team Selector Button */}
                 <ListItemButton
-                    selected={activeItem === 'TeamMenu'}
-                    onClick={() => handleClick('TeamMenu')}
-                    sx={getHoverStyles(activeItem === 'TeamMenu', true)}
+                    onClick={handleTeamClick}
+                    sx={getTeamSelectorStyles()}
                 >
                     <ListItemIcon>
                         <selectedTeamData.icon />
@@ -192,27 +213,61 @@ const Sidebar = () => {
                                 {selectedTeamData.label} {renderLabel(selectedTeamData.type)}
                             </Box>
                         }
-                        primaryTypographyProps={{ fontWeight: activeItem === 'TeamMenu' ? 600 : 400 }}
+                        primaryTypographyProps={{ fontWeight: 400 }}
                     />
-                    {openTeamMenu ? <ExpandLess /> : <ExpandMore />}
+                    <ExpandMore />
                 </ListItemButton>
 
-                <Collapse in={openTeamMenu} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
+                {/* Team Selection Popover */}
+                <Popover
+                    open={open}
+                    anchorEl={anchorEl}
+                    onClose={handlePopoverClose}
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    }}
+                    transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'left',
+                    }}
+                    sx={{
+                        '& .MuiPopover-paper': {
+                            width: 200,
+                            borderRadius: '12px',
+                            boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+                            mt: 1,
+                        }
+                    }}
+                >
+                    <List sx={{ py: 1 }}>
                         {teamItems.map((team) => {
                             const IconComponent = team.icon;
+                            const isSelected = selectedTeam === team.label;
                             return (
                                 <ListItemButton
                                     key={team.id}
+                                    onClick={() => handleTeamSelect(team.id)}
                                     sx={{
-                                        pl: 4,
-                                        ...getHoverStyles(activeItem === team.id, false)
+                                        mx: 1,
+                                        borderRadius: '8px',
+                                        ...(isSelected && {
+                                            backgroundColor: '#e3f2fd',
+                                            '& .MuiListItemIcon-root': {
+                                                color: '#1976d2',
+                                            },
+                                            '& .MuiListItemText-primary': {
+                                                color: '#1976d2',
+                                            },
+                                        }),
+                                        '&:hover': {
+                                            backgroundColor: isSelected ? '#e3f2fd' : '#f5f5f5',
+                                            borderRadius: '8px',
+                                        },
                                     }}
-                                    selected={activeItem === team.id}
-                                    onClick={() => handleClick(team.id)}
                                 >
-                                    <ListItemIcon>
-                                        <IconComponent />
+                                    <ListItemIcon sx={{ minWidth: 36 }}>
+                                        <IconComponent fontSize="small" />
                                     </ListItemIcon>
                                     <ListItemText
                                         primary={
@@ -220,24 +275,28 @@ const Sidebar = () => {
                                                 {team.label} {renderLabel(team.type)}
                                             </Box>
                                         }
-                                        primaryTypographyProps={{ fontWeight: activeItem === team.id ? 600 : 400 }}
+                                        primaryTypographyProps={{ 
+                                            fontWeight: isSelected ? 600 : 400,
+                                            fontSize: '14px'
+                                        }}
                                     />
                                 </ListItemButton>
                             );
                         })}
                     </List>
-                </Collapse>
+                </Popover>
 
                 <div style={{ height: '20px' }}></div>
 
+                {/* Navigation Items */}
                 {navItems.map((item) => {
                     const IconComponent = item.icon;
                     return (
                         <ListItemButton
                             key={item.id}
                             selected={activeItem === item.id}
-                            onClick={() => handleClick(item.id)}
-                            sx={getHoverStyles(activeItem === item.id, false)}
+                            onClick={() => handleNavClick(item.id)}
+                            sx={getHoverStyles(activeItem === item.id)}
                         >
                             <ListItemIcon>
                                 <IconComponent />
