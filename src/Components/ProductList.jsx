@@ -16,7 +16,7 @@ const ProductList = () => {
 
     const pageCount = Math.ceil(productList.length / productsPerPage);
 
-    const handleChange = (event, value) => {
+    const handleChange = (_event, value) => {
         setPage(value); 
     };
 
