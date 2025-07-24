@@ -22,6 +22,32 @@ import product21 from "../assets/products/product21.webp";
 import product22 from "../assets/products/product22.webp";
 import product23 from "../assets/products/product23.webp";
 import product24 from "../assets/products/product24.webp";
+import product25 from "../assets/products/product25.webp";
+import product26 from "../assets/products/product26.webp";
+import product27 from "../assets/products/product27.webp";
+import product28 from "../assets/products/product28.webp";
+import product29 from "../assets/products/product29.webp";
+import product30 from "../assets/products/product30.webp";
+import product31 from "../assets/products/product31.webp";
+import product32 from "../assets/products/product32.webp";
+import product33 from "../assets/products/product33.webp";
+import product34 from "../assets/products/product34.webp";
+import product35 from "../assets/products/product35.webp";
+import product36 from "../assets/products/product36.webp";
+import product37 from "../assets/products/product37.webp";
+import product38 from "../assets/products/product38.webp";
+import product39 from "../assets/products/product39.webp";
+import product40 from "../assets/products/product40.webp";
+import product41 from "../assets/products/product41.webp";
+import product42 from "../assets/products/product42.webp";
+import product43 from "../assets/products/product43.webp";
+import product44 from "../assets/products/product44.webp";
+import product45 from "../assets/products/product45.webp";
+import product46 from "../assets/products/product46.webp";
+import product47 from "../assets/products/product47.webp";
+import product48 from "../assets/products/product48.webp";
+import product49 from "../assets/products/product49.webp";
+import product50 from "../assets/products/product50.webp";
 
 const products = [
     {
@@ -191,7 +217,190 @@ const products = [
         "price": 15000,
         "image": product24,
         "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 25,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product25,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 26,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product26,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 27,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product27,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 28,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product28,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 29,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product29,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 30,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product30,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 31,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product31,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 32,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product32,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 33,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product33,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 34,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product34,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 35,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product35,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 36,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product36,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 37,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product37,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 38,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product38,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 39,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product39,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 40,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product40,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 41,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product41,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 42,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product42,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 43,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product43,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 44,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product44,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 45,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product45,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 46,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product46,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 47,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product47,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 48,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product48,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 49,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product49,
+        "colors": ["#FF6347", "#4682B4"]
+    },
+    {
+        "id": 50,
+        "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
+        "price": 15000,
+        "image": product50,
+        "colors": ["#FF6347", "#4682B4"]
     }
+    
 ];
 
 export default products;
