@@ -7,12 +7,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/NavBar';
 import ProductList from './Components/ProductList';
 import Sidebar from './Components/SideBar';
-import { Provider } from 'react-redux';
-import store from './store/store';
+
 
 function App() {
   return (
-    <Provider store={store}>
       <Router>
         <div style={{ display: 'flex' }}>
           <Sidebar />
@@ -24,7 +22,6 @@ function App() {
           </div>
         </div>
       </Router>
-    </Provider>
   );
 }
 

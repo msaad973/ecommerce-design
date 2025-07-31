@@ -7,12 +7,10 @@ const getBadge = (id) => {
     return badges[id % badges.length];
 };
 
-
-
 const ProductCard = ({ product }) => {
-    const badge = getBadge(product.id);
-    const originalPrice = Math.round(product.price * 1.2);
+    const badge = getBadge(product.id); 
 
+    const originalPrice = Math.round(product.price * 1.2);
     const maxDisplayColors = 3;
     const displayColors = product.colors?.slice(0, maxDisplayColors) || [];
     const remainingColors = product.colors?.length > maxDisplayColors ? product.colors.length - maxDisplayColors : 0;
@@ -88,15 +86,18 @@ const ProductCard = ({ product }) => {
                         )}
                     </div>
                     <div className="flex gap-2 items-center">
-                        <span
-                            style={{
-                                color: "#888",
-                                textDecoration: "line-through",
-                                opacity: 0.7
-                            }}
-                        >
-                            $. {originalPrice}
-                        </span>
+                        {(product.price > 5000 && product.price > 0) &&
+                            <span
+                                style={{
+                                    color: "#888",
+                                    textDecoration: "line-through",
+                                    opacity: 0.7,
+                                }}
+                            >
+                                $. {originalPrice}
+                            </span>
+                        }
+
                         <span>
                             $. {product.price}
                         </span>

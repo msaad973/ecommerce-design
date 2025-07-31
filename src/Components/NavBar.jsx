@@ -40,6 +40,7 @@ const Navbar = () => {
                     </IconButton>
                 )}
                 {showSearch && (
+                    
                     <TextField
                         variant="outlined"
                         placeholder="Search..."

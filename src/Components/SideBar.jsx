@@ -199,7 +199,6 @@ const Sidebar = () => {
             <LogoSvg />
 
             <List sx={{ pt: 0 }}>
-                {/* Team Selector Button */}
                 <ListItemButton
                     onClick={handleTeamClick}
                     sx={getTeamSelectorStyles()}
@@ -218,7 +217,6 @@ const Sidebar = () => {
                     <ExpandMore />
                 </ListItemButton>
 
-                {/* Team Selection Popover */}
                 <Popover
                     open={open}
                     anchorEl={anchorEl}
@@ -288,7 +286,6 @@ const Sidebar = () => {
 
                 <div style={{ height: '20px' }}></div>
 
-                {/* Navigation Items */}
                 {navItems.map((item) => {
                     const IconComponent = item.icon;
                     return (

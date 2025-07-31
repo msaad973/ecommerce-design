@@ -53,21 +53,21 @@ const products = [
     {
         "id": 1,
         "name": "Nike Air Force 1",
-        "price": 1100,
+        "price": 1101,
         "image": product1,
         "colors": ["#FFFFFF", "#000000", "#FF4444", "#4A90E2", "#32CD32", "#9B59B6"]
     },
     {
         "id": 2,
         "name": "Nike Space Hippie 04",
-        "price": 2000,
+        "price": 112003,
         "image": product2,
         "colors": ["#4A90E2"]
     },
     {
         "id": 3,
         "name": "Nike Air Zoom Pegasus 3",
-        "price": 3500,
+        "price": 999,
         "image": product3,
         "colors": ["#9B59B6", "#E74C3C"]
     },
@@ -144,28 +144,28 @@ const products = [
     {
         "id": 14,
         "name": "Nike Air Force 1 Shadow SE",
-        "price": 15000,
+        "price": 1000,
         "image": product14,
         "colors": ["#DDA0DD", "#F0E68C"]
     },
     {
         "id": 15,
         "name": "Nike Air Zoom Tempo NEXT%",
-        "price": 15000,
+        "price": 2000,
         "image": product15,
         "colors": ["#FF6347", "#40E0D0", "#9ACD32", "#DA70D6", "#4682B4", "#FF8C69", "#32CD32"]
     },
     {
         "id": 16,
         "name": "Nike DBreak-Type",
-        "price": 15000,
+        "price": 153000,
         "image": product16,
         "colors": ["#20B2AA", "#FF7F50", "#6495ED", "#9370DB"]
     },
     {
         "id": 17,
         "name": "Nike Air Max Up",
-        "price": 15000,
+        "price": 1000,
         "image": product17,
         "colors": ["#FF8C69"]
     },
@@ -186,21 +186,21 @@ const products = [
     {
         "id": 20,
         "name": "Nike Air Zoom Pegasus 37 Premium",
-        "price": 15000,
+        "price": 1000,
         "image": product20,
         "colors": ["#708090", "#FF69B4", "#4169E1", "#32CD32", "#FFD700", "#8A2BE2", "#FF6347"]
     },
     {
         "id": 21,
         "name": "Nike Air Zoom SuperRep",
-        "price": 15000,
+        "price": 5000,
         "image": product21,
         "colors": ["#32CD32", "#FF4500", "#4169E1", "#FF1493"]
     },
     {
         "id": 22,
         "name": "NikeCourt Royale",
-        "price": 15000,
+        "price": 1000,
         "image": product22,
         "colors": ["#800080"]
     },
@@ -214,14 +214,14 @@ const products = [
     {
         "id": 24,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 5000,
         "image": product24,
         "colors": ["#FF6347", "#4682B4"]
     },
     {
         "id": 25,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 6000,
         "image": product25,
         "colors": ["#FF6347", "#4682B4"]
     },
@@ -242,7 +242,7 @@ const products = [
     {
         "id": 28,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 1000,
         "image": product28,
         "colors": ["#FF6347", "#4682B4"]
     },
@@ -263,7 +263,7 @@ const products = [
     {
         "id": 31,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 1100,
         "image": product31,
         "colors": ["#FF6347", "#4682B4"]
     },
@@ -277,14 +277,14 @@ const products = [
     {
         "id": 33,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 1300,
         "image": product33,
         "colors": ["#FF6347", "#4682B4"]
     },
     {
         "id": 34,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 1500,
         "image": product34,
         "colors": ["#FF6347", "#4682B4"]
     },
@@ -319,7 +319,7 @@ const products = [
     {
         "id": 39,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 1000,
         "image": product39,
         "colors": ["#FF6347", "#4682B4"]
     },
@@ -340,14 +340,14 @@ const products = [
     {
         "id": 42,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 2000,
         "image": product42,
         "colors": ["#FF6347", "#4682B4"]
     },
     {
         "id": 43,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 11000,
         "image": product43,
         "colors": ["#FF6347", "#4682B4"]
     },
@@ -361,28 +361,28 @@ const products = [
     {
         "id": 45,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 4000,
         "image": product45,
         "colors": ["#FF6347", "#4682B4"]
     },
     {
         "id": 46,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 77000,
         "image": product46,
         "colors": ["#FF6347", "#4682B4"]
     },
     {
         "id": 47,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 5000,
         "image": product47,
         "colors": ["#FF6347", "#4682B4"]
     },
     {
         "id": 48,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 4000,
         "image": product48,
         "colors": ["#FF6347", "#4682B4"]
     },
@@ -396,7 +396,7 @@ const products = [
     {
         "id": 50,
         "name": "Nike React Infinity Run Flyknit A.I.R. Chaz Bears",
-        "price": 15000,
+        "price": 5000,
         "image": product50,
         "colors": ["#FF6347", "#4682B4"]
     }
