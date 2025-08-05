@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, Popover, Box } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
 import PersonIcon from '@mui/icons-material/Person';
@@ -11,17 +13,31 @@ import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Sidebar = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const [anchorEl, setAnchorEl] = useState(null);
-    const [activeItem, setActiveItem] = useState('Dashboard');
+    const [activeItem, setActiveItem] = useState('');
     const [selectedTeam, setSelectedTeam] = useState('Team 1');
 
+    useEffect(() => {
+    const path = location.pathname.toLowerCase();
+    if (path === '/') setActiveItem('Dashboard');
+    else if (path.startsWith('/user')) setActiveItem('User');
+    else if (path.startsWith('/product')) setActiveItem('Product');
+    else if (path.startsWith('/blog')) setActiveItem('Blog');
+    else if (!['/', '/user', '/product'].includes(path)) setActiveItem('NotFound');
+    else setActiveItem('');
+}, [location.pathname]);
+
+
     const navItems = [
-        { id: 'Dashboard', label: 'Dashboard', icon: DashboardCustomizeIcon },
-        { id: 'User', label: 'User', icon: PersonIcon },
-        { id: 'Product', label: 'Product', icon: ShoppingCartIcon },
-        { id: 'Blog', label: 'Blog', icon: ArticleIcon },
+        { id: 'Dashboard', label: 'Dashboard', icon: DashboardCustomizeIcon,Path:"/" },
+        { id: 'User', label: 'User', icon: PersonIcon,Path:"/user" },
+        { id: 'Product', label: 'Product', icon: ShoppingCartIcon,Path:"/product" },
+        { id: 'Blog', label: 'Blog', icon: ArticleIcon,Path:"/blog" },
         { id: 'Signin', label: 'Signin', icon: LockIcon },
-        { id: 'NotFound', label: 'Not Found', icon: NotInterestedIcon },
+        { id: 'NotFound', label: 'Not Found', icon: NotInterestedIcon,Path:"/*" },
     ];
 
     const teamItems = [
@@ -49,6 +65,11 @@ const Sidebar = () => {
 
     const handleNavClick = (item) => {
         setActiveItem(item);
+        if (item.id === 'Signin') {
+            navigate('/');
+        } else {
+            navigate(item.Path);
+        }
     };
 
     const open = Boolean(anchorEl);
@@ -292,7 +313,7 @@ const Sidebar = () => {
                         <ListItemButton
                             key={item.id}
                             selected={activeItem === item.id}
-                            onClick={() => handleNavClick(item.id)}
+                            onClick={() => handleNavClick(item)}
                             sx={getHoverStyles(activeItem === item.id)}
                         >
                             <ListItemIcon>

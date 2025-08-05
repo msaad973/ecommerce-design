@@ -32,7 +32,7 @@ const Navbar = () => {
             <div className="flex items-center gap-2 mr-4">
                 {!showSearch && (
                     <IconButton
-                        color=""
+                        color="" 
                         sx={{ mr: 2 }}
                         onClick={() => setShowSearch(true)}
                     >

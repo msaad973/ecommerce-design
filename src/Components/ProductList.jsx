@@ -29,7 +29,7 @@ const ProductList = () => {
             </div>
 
             <div className="flex justify-center mt-8">
-                <Stack direction="row" spacing={2}>
+                <Stack direction="row">
                     <Pagination 
                         count={pageCount}
                         page={page}
@@ -42,4 +42,4 @@ const ProductList = () => {
     );
 };
 
-export default ProductList;
+export default ProductList;   
