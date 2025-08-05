@@ -69,7 +69,7 @@ const Sidebar = () => {
             navigate('/');
         } else {
             navigate(item.Path);
-        }
+        } 
     };
 
     const open = Boolean(anchorEl);
