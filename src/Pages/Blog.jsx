@@ -4,15 +4,20 @@ const Blog = () => (
     <div
         style={{
             display: 'flex',
+            flexDirection: 'column',
             minHeight: '100vh',
-            justifyContent: 'center',
+            justifyContent: 'flex-start',
             alignItems: 'center',
-            fontSize: '2.5rem',
-            fontWeight: 500,
+            backgroundColor: '#17313E',
+            color: 'white',
+            padding: '90px 20px',
+            textAlign: 'center',
         }}
     >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic distinctio maxime in atque tempora recusandae similique impedit ducimus, sequi velit blanditiis error vero ad? In ea eos quaerat repudiandae iusto.
-    
+        <h1 style={{ fontSize: '2.5rem', fontWeight: 600, marginBottom: '20px' }}>Blog</h1>
+        <p style={{ fontSize: '1.2rem', fontWeight: 'normal', maxWidth: '600px', marginTop: '170px' }}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum iusto iure ea qui voluptates eius, explicabo accusamus voluptatibus inventore at omnis libero minima asperiores modi beatae? Ratione, enim natus!
+        </p>
     </div>
 );
 

@@ -11,6 +11,7 @@ import Product from './Pages/Product';
 import User from './Pages/User';
 import NotFound from './Pages/NotFound';
 import Blog from './Pages/Blog';
+import SignIn from './Pages/SignIn';
 
 
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/user" element={<User />} />
             <Route path="/*" element={<NotFound />} />
             <Route path='/blog' element={<Blog />} />
+            <Route path='signin' element={<SignIn />} />
 
 
           </Routes>

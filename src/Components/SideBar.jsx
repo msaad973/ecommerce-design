@@ -21,23 +21,24 @@ const Sidebar = () => {
     const [selectedTeam, setSelectedTeam] = useState('Team 1');
 
     useEffect(() => {
-    const path = location.pathname.toLowerCase();
-    if (path === '/') setActiveItem('Dashboard');
-    else if (path.startsWith('/user')) setActiveItem('User');
-    else if (path.startsWith('/product')) setActiveItem('Product');
-    else if (path.startsWith('/blog')) setActiveItem('Blog');
-    else if (!['/', '/user', '/product'].includes(path)) setActiveItem('NotFound');
-    else setActiveItem('');
-}, [location.pathname]);
+        const path = location.pathname.toLowerCase();
+        if (path === '/') setActiveItem('Dashboard');
+        else if (path.startsWith('/user')) setActiveItem('User');
+        else if (path.startsWith('/product')) setActiveItem('Product');
+        else if (path.startsWith('/blog')) setActiveItem('Blog');
+        else if (path.startsWith('/signin')) setActiveItem('SignIn');
+        else if (path === '/*') setActiveItem('NotFound');
+        else setActiveItem('');
+    }, [location.pathname]);
 
 
     const navItems = [
-        { id: 'Dashboard', label: 'Dashboard', icon: DashboardCustomizeIcon,Path:"/" },
-        { id: 'User', label: 'User', icon: PersonIcon,Path:"/user" },
-        { id: 'Product', label: 'Product', icon: ShoppingCartIcon,Path:"/product" },
-        { id: 'Blog', label: 'Blog', icon: ArticleIcon,Path:"/blog" },
-        { id: 'Signin', label: 'Signin', icon: LockIcon },
-        { id: 'NotFound', label: 'Not Found', icon: NotInterestedIcon,Path:"/*" },
+        { id: 'Dashboard', label: 'Dashboard', icon: DashboardCustomizeIcon, Path: "/" },
+        { id: 'User', label: 'User', icon: PersonIcon, Path: "/user" },
+        { id: 'Product', label: 'Product', icon: ShoppingCartIcon, Path: "/product" },
+        { id: 'Blog', label: 'Blog', icon: ArticleIcon, Path: "/blog" },
+        { id: 'SignIn', label: 'SignIn', icon: LockIcon, Path: "/signin" },
+        { id: 'NotFound', label: 'Not Found', icon: NotInterestedIcon, Path: "/*" },
     ];
 
     const teamItems = [
@@ -65,11 +66,8 @@ const Sidebar = () => {
 
     const handleNavClick = (item) => {
         setActiveItem(item);
-        if (item.id === 'Signin') {
-            navigate('/');
-        } else {
-            navigate(item.Path);
-        } 
+        navigate(item.Path);
+
     };
 
     const open = Boolean(anchorEl);
@@ -294,7 +292,7 @@ const Sidebar = () => {
                                                 {team.label} {renderLabel(team.type)}
                                             </Box>
                                         }
-                                        primaryTypographyProps={{ 
+                                        primaryTypographyProps={{
                                             fontWeight: isSelected ? 600 : 400,
                                             fontSize: '14px'
                                         }}
