@@ -17,6 +17,7 @@ const flags = [
 const Navbar = () => {
     const [showSearch, setShowSearch] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
+    const [selectedFlag, setSelectedFlag] = useState(flags[0]); // Default flag: USA
 
     const handleFlagClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -26,21 +27,21 @@ const Navbar = () => {
         setAnchorEl(null);
     };
 
+    const handleFlagSelect = (flag) => {
+        setSelectedFlag(flag);       // ✅ update selected flag
+        handleMenuClose();           // ✅ close the menu
+    };
+
     return (
         <nav className="bg-white p-2 text-black flex justify-between items-center h-16 fixed top-0 left-0 w-full z-50">
             <h1 className="text-xl font-bold ml-4">E-Commerce Site</h1>
             <div className="flex items-center gap-2 mr-4">
                 {!showSearch && (
-                    <IconButton
-                        color="" 
-                        sx={{ mr: 2 }}
-                        onClick={() => setShowSearch(true)}
-                    >
+                    <IconButton sx={{ mr: 2 }} onClick={() => setShowSearch(true)}>
                         <SearchIcon />
                     </IconButton>
                 )}
                 {showSearch && (
-                    
                     <TextField
                         variant="outlined"
                         placeholder="Search..."
@@ -51,9 +52,9 @@ const Navbar = () => {
                 )}
                 <div>
                     <img
-                        src={flags[0].src}
-                        alt={flags[0].name}
-                        title={flags[0].name}
+                        src={selectedFlag.src} // ✅ use selectedFlag instead of flags[0]
+                        alt={selectedFlag.name}
+                        title={selectedFlag.name}
                         className="h-6 w-8 object-cover rounded shadow cursor-pointer"
                         onClick={handleFlagClick}
                     />
@@ -65,7 +66,7 @@ const Navbar = () => {
                         transformOrigin={{ vertical: "top", horizontal: "right" }}
                     >
                         {flags.map(flag => (
-                            <MenuItem key={flag.name} onClick={handleMenuClose}>
+                            <MenuItem key={flag.name} onClick={() => handleFlagSelect(flag)}>
                                 <img
                                     src={flag.src}
                                     alt={flag.name}
@@ -76,7 +77,7 @@ const Navbar = () => {
                         ))}
                     </Menu>
                 </div>
-                <IconButton color="light-grey" sx={{ mr: 2 }}>
+                <IconButton sx={{ mr: 2 }}>
                     <NotificationsIcon />
                 </IconButton>
             </div>
